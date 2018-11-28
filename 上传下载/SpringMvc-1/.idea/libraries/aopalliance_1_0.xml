@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="aopalliance-1.0">
+    <CLASSES>
+      <root url="jar://D:/常用工具包/SpringMVC/aopalliance-1.0.jar!/" />
+      <root url="jar://D:/常用工具包/SpringMVC/aspectjweaver-1.8.4.jar!/" />
+      <root url="jar://D:/常用工具包/SpringMVC/commons-logging-1.1.3.jar!/" />
+      <root url="jar://D:/常用工具包/SpringMVC/spring-aop-3.2.0.RELEASE.jar!/" />
+      <root url="jar://D:/常用工具包/SpringMVC/spring-beans-3.2.0.RELEASE.jar!/" />
+      <root url="jar://D:/常用工具包/SpringMVC/spring-context-3.2.0.RELEASE.jar!/" />
+      <root url="jar://D:/常用工具包/SpringMVC/spring-core-3.2.0.RELEASE.jar!/" />
+      <root url="jar://D:/常用工具包/SpringMVC/spring-expression-3.2.0.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,15 @@
+# spring配置
+spring:
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://www.lhlsy.com:3306/join?useSSL=false
+    username: join
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 阿里数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    password: K8QD1QzmWXCSNG3Vo4JeD2Ra1MqA2LafulpGDaetT02c2e5wxI0eyRL62cfibnBGBoubfMov59/8fmUdQO3QdA==
+
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: utf-8

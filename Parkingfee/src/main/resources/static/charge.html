@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>车辆出库收费</title>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript">
+      $(function () {
+          //方法二：解决传过来的参数乱码
+          (function ($) {
+              $.getUrlParam = function (name) {
+                  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                  var r = window.location.search.substr(1).match(reg);
+                  if (r != null) return unescape(r[2]);
+                  return null;
+              }
+          })(jQuery);
+          //获取传过来的参数
+          var searchUrl =window.location.href;
+          var searchData =searchUrl.split("=");
+          var warehouseno =decodeURI(searchData[1]);
+          var stor=decodeURI(searchData[2]);
+          var carimg=decodeURI((searchData[3]))
+          $("#mxh1").val(warehouseno);
+          $("#mxh3").val(stor);
+          $("#mxh2").val(carimg);
+         /* var outagetime = $("input[type=datetime-local]").val();*/
+          $("input[mxh=mxh]").click(function () {
+              alert("正在出库...");
+              var no = $("#mxh1").val();
+              $.getJSON("http://localhost:8080/upda",{warehouseno:no},function(result){
+                  alert("车牌："+ result.warehouseno+"\n"+
+                        "停车时长：" + result.dat+"\n"+
+                        "应缴费：" + result.amountmoney);
+                  location.href="http://localhost:8080/carList.html";
+              });
+          });
+      })
+  </script>
+</head>
+<body>
+<h2>车辆出库收费</h2>
+<div>
+  车牌号：<input type="text" name="warehouseno" value="" id="mxh1"><br>
+  车辆照片：<input type="text" name="carimg" value="" id="mxh2"><br>
+  入库时间：<input type="text" name="storagetime" value="" id="mxh3"><br>
+  出库时间：<input type="datetime-local" name="outagetime" value="" id="mxh4"><br>
+  <input type="button" value="出库登记" mxh="mxh">
+</div>
+</body>
+</html>

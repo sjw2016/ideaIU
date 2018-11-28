@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.dao.ParkingfeeDao">
+
+    <select id="selall" resultType="com.example.demo.pojo.Parkingfee">
+        select * from parkingfee
+    </select>
+
+    <select id="sele" parameterType="com.example.demo.pojo.Parkingfee" resultType="com.example.demo.pojo.Parkingfee">
+        select * from parkingfee where warehouseno=#{warehouseno}
+    </select>
+
+    <insert id="inse" parameterType="com.example.demo.pojo.Parkingfee">
+        insert into parkingfee(warehouseno,storagetime,state) values (#{warehouseno},#{storagetime},#{state})
+    </insert>
+
+    <update id="upda" parameterType="com.example.demo.pojo.Parkingfee">
+        update parkingfee
+        <trim prefix="set" suffix="outagetime=#{outagetime},amountmoney=#{amountmoney} where warehouseno=#{warehouseno}">
+        <if test="state != null">state=#{state},</if>
+        </trim>
+    </update>
+</mapper>

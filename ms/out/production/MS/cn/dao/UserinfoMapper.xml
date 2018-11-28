@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dao.UserinfoDao">
+    <select id="sel" parameterType="Userinfo" resultType="Userinfo">
+        select * from userinfo
+    </select>
+    <insert id="inst" parameterType="Userinfo">
+        insert into userinfo values(#{id},#{username},#{password},#{phone},#{address},#{hobdy},#{sex})
+    </insert>
+    <update id="upda" parameterType="Userinfo">
+        update userinfo
+        <trim prefix="set" suffixOverrides="," suffix="where id=#{id}">
+            <if test="username != null">username=#{username},</if>
+            <if test="password != null">password=#{password},</if>
+            <if test="phone != null">phone=#{phone},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="hobdy != null">hobby=#{hobdy},</if>
+            <if test="sex != null">sex=#{sex},</if>
+        </trim>
+    </update>
+    <delete id="del" parameterType="Userinfo">
+        delete from userinfo where id=#{id}
+    </delete>
+    <select id="selPaging" resultType="Userinfo">
+        select * from userinfo where sex=#{us.sex} limit #{ss},#{r}
+    </select>
+</mapper>

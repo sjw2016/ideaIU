@@ -1,0 +1,17 @@
+spring:
+  mvc:
+    view:
+      prefix: /static/
+      suffix: .html
+  datasource:
+    url: jdbc:mysql://localhost:3306/parkingfeedb?serverTimezone=CTT&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  type-aliases-package: classpath:com/example/demo/pojo
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+server:
+  port: 8080

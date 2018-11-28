@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>车辆入库停车登记</title>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript">
+      $(function () {
+          $(".tijiao").click(function () {
+              var data = {
+                  "warehouseno":$(".textStyle").val(),
+                  "storagetime":$(".dateStyle").val()
+              }
+              $.getJSON("/inse",
+                  data,
+                  function (result) {
+                      if(result == 1){
+                          location.href="carList.html"
+                      }
+                  }
+              )
+          })
+      })
+  </script>
+
+</head>
+<body>
+<div class="container">
+  <h1 class="tabTitle">车辆临时停车登记</h1>
+
+  <table cellpadding="0" cellspacing="0" border="0" class="addTable">
+    <tr>
+      <td class="tdWidth"><span>*</span>车牌号：</td>
+      <td><input name="warehouseno" type="text" class="textStyle" style="width:160px;" placeholder="请输入车牌号"  />
+      </td>
+    </tr>
+    <tr>
+      <td class="tdWidth"><span>*</span>入库时间：</td>
+      <td><input name="storagetime" type="date" class="dateStyle"  style="width:160px;"/></td>
+    </tr>
+
+    <tr>
+      <td class="tdWidth">车辆照片录入：</td>
+      <td>
+        <a href=" " class="fileStyle" title="请选择要上传的文件">
+        <input type="file" class="file" size=1 onchange="document.getElementById('imgUrl').value=this.value" />
+      </a>
+      <input type="text" class="textStyle" id="imgUrl" style="width:120px;"/>
+      <input type="button" class="uploadButton" value="上传"/>
+
+      </td>
+    </tr>
+    <tr>
+      <td class="tdWidth"></td>
+      <td><input type="button" value="提交" class="tijiao"></td>
+    </tr>
+  </table>
+
+</div>
+
+
+</body>
+</html>

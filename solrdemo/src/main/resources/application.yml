@@ -1,0 +1,5 @@
+task:
+  cron:
+    tradeData: 0 1 0 * * ?
+server:
+  port: 8989

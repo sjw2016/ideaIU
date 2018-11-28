@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="aopalliance-1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/aspectjweaver-1.6.9.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/commons-dbcp.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/commons-fileupload-1.2.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/commons-io-2.4.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/commons-lang-2.6.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/commons-pool.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/fastjson-1.2.13.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/hibernate-validator-4.3.2.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/jboss-logging-3.1.0.CR2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/jstl.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/log4j-1.2.17.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/mybatis-3.2.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/mybatis-spring-1.2.0.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/mysql-connector-java-5.1.25-bin.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/spring-aop-3.2.13.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/spring-beans-3.2.13.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/spring-context-3.2.13.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/spring-core-3.2.13.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/spring-expression-3.2.13.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/spring-jdbc-3.2.13.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/spring-tx-3.2.13.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/spring-web-3.2.13.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/spring-webmvc-3.2.13.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/standard.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/新建文件夹/SSM/lib/validation-api-1.0.0.GA.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

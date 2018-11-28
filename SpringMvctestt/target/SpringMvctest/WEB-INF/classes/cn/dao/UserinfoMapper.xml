@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dao.UserinfoDao">
+    <select id="sellogin" parameterType="Userinfo" resultType="Userinfo">
+        select * from userinfo
+        <trim prefix="where" prefixOverrides="and">
+            <if test="username != null">and username=#{username}</if>
+            <if test="userpwd != null">and userpwd=#{userpwd}</if>
+        </trim>
+    </select>
+
+    <select id="selse" parameterType="Userinfo" resultType="Userinfo">
+        select * from userinfo where useradmin=0
+    </select>
+
+    <select id="selpag" resultType="Userinfo">
+        select * from userinfo where useradmin=0 limit #{s},#{c}
+    </select>
+
+
+    <update id="upda" parameterType="Userinfo">
+        update userinfo
+        <trim prefix="set" suffixOverrides="," suffix="where userid=#{userid}">
+            <if test="username != null">username=#{username},</if>
+            <if test="userpwd != null">userpwd=#{userpwd },</if>
+            <if test="userphone != null">userphone=#{userphone},</if>
+            <if test="useraddress != null">useraddress=#{useraddress},</if>
+            <if test="userhobby != null">userhobby=#{userhobby},</if>
+            <if test="sex != null">sex=#{sex},</if>
+        </trim>
+    </update>
+
+    <select id="selcount" resultType="int">
+        select count(1) from userinfo where state=0
+    </select>
+</mapper>

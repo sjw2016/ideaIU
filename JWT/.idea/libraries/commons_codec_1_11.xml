@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="commons-codec-1.11">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/jar/commons-codec-1.11.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/jar/jackson-annotations-2.9.7.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/jar/jackson-core-2.9.7.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/jar/jackson-databind-2.9.7.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/jar/java-jwt-3.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>车辆停车信息管理</title>
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript">
+    $(function(){
+        $("table").empty();
+        $.getJSON("http://localhost:8080/selall",function(result){
+            var title = '<tr id="first"><th>车牌号</th><th>车辆照片</th><th>入库时间</th><th>出库时间</th> <th>状态</th><th>消费金额</th><th>管理</th></tr>';
+            $("table").append(title);
+            for(var i in result){
+                var warehouseno=result[i].warehouseno;
+                var storagetime=result[i].storagetime;
+                var carimg=result[i].carimg;
+                var state=result[i].state=="未离库"?"<a href='http://localhost:8080/charge.html?warehouseno="+warehouseno+"="+storagetime+"="+carimg+"'>出场计费</a>":"已计费"
+				console.log(warehouseno)
+                var txt = $("<tr><td>"+result[i].warehouseno
+                    +"</td><td>"+result[i].carimg
+                    +"</td><td>"+result[i].storagetime
+                    +"</td><td>"+result[i].outagetime
+                    +"</td><td>"+result[i].state
+                    +"</td><td>"+result[i].amountmoney
+                    +"</td><td>"+state
+                    +"</td></tr>");
+                $("table").append(txt);
+            }
+        });
+    });
+</script>
+</head>
+<body>
+
+<h2>车辆停车信息管理</h2>
+<table border="" cellspacing="0" cellpadding="0" class="table table-hover"/>
+
+</body>>
+</html>

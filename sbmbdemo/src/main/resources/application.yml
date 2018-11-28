@@ -1,0 +1,26 @@
+# spring配置
+spring:
+  mvc:
+    view:
+      # 页面默认前缀目录
+      prefix: /WEB-INF/jsp/
+      # 响应页面默认后缀
+      suffix: .jsp
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/log?serverTimezone=CTT&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 阿里数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+# mybatis配置
+mybatis:
+  # 实体类所在的路径
+  type-aliases-package: classpath:com/example/demo/pojo
+  # mapper文件所在路径
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+server:
+  # 端口配置
+  port: 8080

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("input[type=button]").click(function () {
+                $("table").empty();
+                var word = $("input[mxh=mxh]").val();
+                if(word == "" || word.length == 0){
+                    return;
+                }
+                $.getJSON("http://localhost:8989/sel",{text:word},function(result){
+                    var title = '<tr id="first"><th>产品ID</th><th>产品类型</th><th>产品名</th><th>产品价格</th> <th>产品描述</th><th>产品库存</th></tr>';
+                    $("table").append(title);
+                    for(var i in result){
+                        var txt = $("<tr><td>"+result[i].id
+                            +"</td><td>"+result[i].password
+                            +"</td><td>"+result[i].username
+                            +"</td><td>￥"+result[i].wage
+                            +"</td><td>"+result[i].address
+                            +"</td><td>"+result[i].state
+                            +"件</td></tr>");
+                        $("table").append(txt);
+                    }
+                });
+            });
+        });
+    </script>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #search{
+            margin-left: 300px;
+            width: 600px;
+            height: 40px;
+            font-size: 30px;
+        }
+        #button{
+            width: 80px;
+            height: 40px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="text" value="" mxh="mxh" id="search"/> <input type="button" value="搜索" id="button">
+    <table border="" cellspacing="0" cellpadding="0" class="table table-hover">
+
+    </table>
+</body>
+</html>

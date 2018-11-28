@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="Spring-4.3.18.RELEASE" type="spring">
+    <properties version="4.3.18.RELEASE" />
+    <CLASSES>
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/aspectjweaver-1.8.4.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/commons-dbcp-1.4.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/commons-logging-1.1.3.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/commons-pool-1.6.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/log4j-1.2.16.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/mybatis-3.2.8.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/mybatis-spring-1.2.2.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/mysql-connector-java-5.1.32.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/spring-aop-4.1.3.RELEASE.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/spring-beans-4.1.3.RELEASE.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/spring-context-4.1.3.RELEASE.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/spring-core-4.1.3.RELEASE.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/spring-expression-4.1.3.RELEASE.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/spring-jdbc-4.1.3.RELEASE.jar!/" />
+      <root url="jar://F:/课件/上课视频/8SSM/C22整合SM/示例代码/C22SMzhenghe/lib/spring-tx-4.1.3.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

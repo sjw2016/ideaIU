@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+        xmlns:aop="http://www.springframework.org/schema/aop"  
+        xmlns:p="http://www.springframework.org/schema/p"  
+        xmlns:tx="http://www.springframework.org/schema/tx"  
+        xmlns:context="http://www.springframework.org/schema/context"  
+        xsi:schemaLocation="   
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd   
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd   
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+            http://www.springframework.org/schema/context 
+            http://www.springframework.org/schema/context/spring-context.xsd">  
+
+    <context:component-scan base-package="cn.dao,cn.service"/> 
+    
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<!-- 指定JDBC驱动类 -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<!-- 提供连接数据库的URL地址 -->
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/sql">
+		</property>
+		<!-- 提供连接数据库的用户名和密码 -->
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource" />  
+       <!--  自动扫描mapping.xml文件   -->
+        <property name="mapperLocations" value="classpath:cn/dao/*.xml"></property>
+        <property name="typeAliasesPackage" value="cn.pojo"></property>  
+    </bean>
+
+
+
+	<!--查找类路径下的映射器并自动将它们创建成MapperFactoryBean。-->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="cn.dao"></property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+
+    <!-- 事务管理 -->
+   <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+   		<property name="dataSource" ref="dataSource"/>
+   	</bean>
+
+   	<!-- AOP 事务处理 开始 -->    
+	<aop:aspectj-autoproxy />
+	<aop:config  proxy-target-class="true">
+		<aop:pointcut expression="execution(* cn.service..*(..))" id="transService"/>
+		<aop:advisor pointcut-ref="transService" advice-ref="txAdvice" />
+	</aop:config> 
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">  
+	    <tx:attributes>  
+	       <tx:method name="sel*"  propagation="REQUIRED" rollback-for="Exception"  />
+	       <tx:method name="inst*"  propagation="REQUIRED" rollback-for="Exception"  />
+	       <tx:method name="upda*"  propagation="REQUIRED" rollback-for="Exception"  />
+	       <tx:method name="del*"  propagation="REQUIRED" rollback-for="Exception"  />
+	    </tx:attributes>  
+	</tx:advice>
+	<!-- AOP 事务处理 结束 -->
+	
+	
+    
+</beans>

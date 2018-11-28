@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dao.UserinfoDao">
+    <select id="sellogin" parameterType="Userinfo" resultType="Userinfo">
+        select * from userinfo
+        <trim prefix="where" prefixOverrides="and">
+            <if test="username != null"> and username=#{username}</if>
+            <if test="phone != null"> and phone=#{phone}</if>
+            <if test="password != null">and password=#{password}</if>
+            <if test="id != null">and id=#{id}</if>
+        </trim>
+    </select>
+
+    <update id="updat" parameterType="Userinfo">
+        update userinfo
+        <trim prefix="set" suffixOverrides="," suffix="where id=#{id}">
+            <if test="username != null">username=#{username},</if>
+            <if test="password != null">password=#{password},</if>
+            <if test="phone != null">phone=#{phone},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="wage != null">wage=#{wage},</if>
+            <if test="age != null">age=#{age},</if>
+            <if test="sex != null">sex=#{sex},</if>
+        </trim>
+    </update>
+    <select id="sele" resultType="Userinfo">
+        select * from userinfo where state=1
+    </select>
+</mapper>

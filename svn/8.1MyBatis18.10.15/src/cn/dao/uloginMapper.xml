@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.dao.uloginDao">
+    <select id="getcount" resultType="int">
+		select count(1) from ulogin
+	</select>
+	<select id="lis" resultType="ulogin">
+		select * from ulogin
+	</select>
+	<insert id="inter" parameterType="cn.pojo.ulogin">
+		insert into ulogin values(#{id},#{uname},#{upwd},#{usex})
+	</insert>
+	<update id="updat" parameterType="cn.pojo.ulogin">
+		update ulogin set uname=#{uname},upwd=#{upwd} where id=#{id}
+	</update>
+	<delete id="dele" parameterType="int">
+		delete from ulogin where id=#{id}
+	</delete>
+
+
+	<resultMap type="ulogin" id="uloginAnduserinfo">
+		<result property="id" column="id" />
+		<result property="uname" column="uname"/>
+		<result property="upwd" column="upwd" />
+		<result property="usex" column="usex" />
+		<association property="us" javaType="userinfo">
+			<result property="username" column="username"/>
+			<result property="password" column="passssword" />
+			<result property="phone" column="phone"/>
+		</association>
+	</resultMap>
+	<select id="ulo" resultMap="uloginAnduserinfo" parameterType="ulogin">
+		select * from ulogin,userinfo where username=uname and username=#{uname}
+	</select>
+
+	<resultMap type="userinfo" id="userinfoAndulogin">
+		<result property="username" column="username"/>
+		<result property="password" column="passssword" />
+		<result property="phone" column="phone"/>
+		<collection property="ul" javaType="ulogin">
+			<result property="id" column="id" />
+			<result property="uname" column="uname"/>
+			<result property="upwd" column="upwd" />
+			<result property="usex" column="usex" />
+		</collection>
+	</resultMap>
+	<select id="usi" resultMap="userinfoAndulogin" parameterType="userinfo">
+		select * from ulogin,userinfo where username=uname and uname=#{username}
+	</select>
+</mapper>

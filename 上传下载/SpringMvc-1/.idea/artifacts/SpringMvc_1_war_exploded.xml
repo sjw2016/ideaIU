@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SpringMvc-1:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpringMvc_1_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SpringMvc-1/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SpringMvc-1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="aopalliance-1.0" />
+          <element id="library" level="project" name="spring-web-3.2.13.RELEASE" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/jackson-core-asl-1.9.13.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/jackson-core-2.7.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/commons-fileupload-1.3.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/commons-io-2.4.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
